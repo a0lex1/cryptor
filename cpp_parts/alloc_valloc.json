@@ -1,0 +1,9 @@
+{
+  "defs": {
+    "DEALLOC_POSSIBLE": null
+  },
+  "weak_defs": {
+    "NEEDAPI_VirtualAlloc": null,
+    "NEEDAPI_VirtualFree": null
+  }
+}

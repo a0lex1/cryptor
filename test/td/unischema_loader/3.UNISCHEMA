@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "lemon": {"type": "number", "default": 100},
+    "third": {"type":"number", "$j": {"$jif": ["lemon", 5] }, "default": 500}
+  }
+}

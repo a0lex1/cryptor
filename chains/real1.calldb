@@ -1,0 +1,62 @@
+x$$$add_callgroup /name common /includes windows.h;shlwapi.h
+
+#PostMessage@(<in:MSG>.hWnd, WM_USER, 0, 0)
+#UpdateWindow(<in:MSG>.hWnd)
+#<unused:HBRUSH> = GetStockObject(0)
+#RegisterWindowMessageA
+
+#PostMessage@(<in:WindowHandle>, 0, 0, 0)
+#UpdateWindow(<in:WindowHandle>)
+
+<out:EventHandle> = CreateEvent@(NULL, FALSE, FALSE, NULL)
+<unused::DWORD> = WaitForSingleObject(<in:WaitableHandle>, 100)
+
+#GetFileVersionInfoSize@(<in:FilePath@>, &<out:FileVersionInfoSize>)
+#GetFileVersionInfo@(<in:FilePath@>, 0, <in:FileVersionInfoSize>, <out:Buffer:char@[128]>)  # todo overflow
+
+#LoadString@(<in:Instance>, 0, <out:String@:char@[100]>, 100)
+#SendMessage@(<in:WindowHandle>, 0, 0, 0)
+
+#<out:EventHandle> = CreateEvent@(0, 0, 0)
+#<unused::DWORD> = WaitForSingleObject(<in:WaitableHandle>, 100)
+#<unused::BOOL> = SetEvent(<in:EventHandle>)
+#<unused::BOOL> = ResetEvent(<in:EventHandle>)
+#<unused::BOOL> = CloseHandle(<in:Handle,kill=1>)
+
+#<out:Instance> = GetModuleHandle@(NULL)
+#<out:Instance> = GetModuleHandle@(_To@("kernel32.dll"))
+#<out:WindowHandle> = HWND_DESKTOP
+#GetModuleFileName@(<in:Instance>, <out:FilePath@:char@[260]>, 260)
+
+
+$$$add_property_json /property category_tree
+{
+  "Buffer": {
+    "String@": {                # StringA, StringW
+      "Path@": {                # PathA, PathW
+        "FilePath@": {},        # FilePathA, FilePathW
+        "DirectoryPath@": {}    #
+      }
+    }
+  },
+  "Handle": {
+    "WaitableHandle": {
+      "EventHandle": {},
+      "IOCPHandle": {}
+     }
+  },
+  "WindowHandle": {},
+  "DeviceContext": {},
+  "FileVersionInfoSize": {},
+  "Instance": {}
+}
+
+$$$add_property_json /property category_deftypes
+{
+  "Handle": "HANDLE",       #TODO: Base category's deftype applies to derived categories
+  "WindowHandle": "HWND",
+  "DeviceContext": "HDC",
+  "FileVersionInfoSize": "u32",
+  "Instance": "HINSTANCE"
+}
+

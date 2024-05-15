@@ -1,0 +1,54 @@
+// Originally, a crafted file used by funcgen to test code generator. You maybe seeing a copy now.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <type_traits>
+#include <ctype.h> // isalpha
+
+#pragma warning(disable:4308) // negative const converted to unsigned type
+
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned int u32;
+typedef unsigned __int64 u64;
+typedef signed char i8;
+typedef signed short i16;
+typedef signed int i32;
+typedef signed __int64 i64;
+typedef float floa;
+typedef double doub;
+typedef void* pvoid;
+
+// Substitutions
+#define UNINIT 0xcf
+#define UNK -1
+#define AT(arr, byteofs) *((std::remove_reference<decltype( *arr )>::type*)((char*)arr+byteofs))
+
+%%%includes%%%
+
+// --- Generated global vars
+%%%glob_vars%%%
+
+#define ASSERT(e) { if (!(e)) { printf("************** CHECK FAILED - %s\n", #e);  *(int*)0 = 1; } }
+//#define ASSERT(e) assert(e)
+
+// --- Predefs
+%%%predefs%%%
+
+static void gened(%%%args_funcdecl%%%) {
+%%%loc_vars%%%
+  printf("executing code\n");
+%%%code%%%
+  printf("code done\n");
+}
+
+int main() {
+
+  printf("Hello from funcgen multi-purpose test helper.\n");
+  gened(%%%args_funccall%%%);
+  printf("worker(%%%args_funccall%%%) returned\n");
+  return %%%retcode%%%;
+}
+
+

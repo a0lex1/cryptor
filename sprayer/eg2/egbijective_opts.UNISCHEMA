@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "funct": {"type": "string", "default": "sticky", "$jdefault": ["$jcs", "rand", "sticky"]},
+    "rand": {
+      "$j": {"$jif": ["funct", "rand"]},
+      "type": "object",
+      "properties": {
+        "reserved": {"type": "number", "default": 0, "$jhint": "can be distribution, etc"}
+      }
+    },
+    "sticky": {
+      "$j": {"$jif": ["funct", "sticky"]},
+      "type": "object",
+      "properties": {
+        "probab_change_percent": {"type": "number", "default": 30, "$jdefault": ["$jcn", "0", "70" ], "$jcomment": "#SacrificeTestForPerformance 100%"},
+        "max_change_percent": {"type": "number", "default": 10, "$jdefault": ["$jcn", "0", "70" ]}
+      }
+    },
+    "core_opts": { "$include": "/sprayer/eg2/core/bijectivecore_opts.UNISCHEMA" }
+  }
+}

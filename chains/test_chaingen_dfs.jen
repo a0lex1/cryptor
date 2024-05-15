@@ -1,0 +1,4 @@
+{
+  "reserved": ["$jcs", "reserved1", "reserved2"],
+  "order": ["$jcs", "default", "reversed"]
+}

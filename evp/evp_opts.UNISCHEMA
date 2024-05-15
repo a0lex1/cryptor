@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "protlogic": {
+      "$include": "/evp/protlogic_opts.UNISCHEMA"
+    }
+  },
+  "additionalProperties": false
+}

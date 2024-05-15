@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "reserved": {"type": "string", "default": ""}
+  },
+  "additionalProperties": false
+}

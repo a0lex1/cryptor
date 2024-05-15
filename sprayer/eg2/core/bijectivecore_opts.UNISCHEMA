@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "term_gravitate_right": {"type":"boolean",  "default":false,    "$jdefault":["$jcb","true","false"]},
+    "op_gravitate_outer":   {"type":"boolean",  "default":true,     "$jdefault":["$jcb","true","false"]},
+    "prerotate_bits_term":  {"type":"number",   "default":0,        "$jdefault":["$jcn","15"], "$jcomment": "#SacrificeTestForPerformance"},
+    "prerotate_bits_op":    {"type":"number",   "default":0,        "$jdefault":["$jcn","17"], "$jcomment": "#SacrificeTestForPerformance"}
+  }
+}

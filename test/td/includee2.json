@@ -1,0 +1,5 @@
+{
+  "me": "included",
+  "meold": 6,
+  "meinfo": { "$include": "/test/td/includee2a.json" }
+}

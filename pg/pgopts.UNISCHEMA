@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "dbgchecks": { "type": "boolean", "default": false },
+    "release_sleeps": { "type": "boolean", "default": true },
+    "dbgbreaks_before": { "type": "string", "default": "demo_userproc1,demo_userproc3" },
+    "dbgbreaks_after": { "type": "string", "default": "demo_userproc1,demo_userproc3" },
+
+    "user_headers": { "type": "string", "default": "all these fields are theoretical !!! maybe they will be removed" },
+    "entryproc_fromdecl": { "type": "boolean", "default": true },
+    "entryproc_name": { "type": "string", "default": "ProgramEntry" },
+    "entryproc_isroot": { "type": "boolean", "default": true },
+
+    "generator": { "type": "string", "default": "empty", "$jPGTest": ["$jcs", "empty", "alpha", "full"] },
+    "alphagen": { "$j": {"$jif": ["generator", "alpha"]}, "$include": "/pg/alphagen.UNISCHEMA" },
+    "fullgen": { "$j": {"$jif": ["generator", "full"]}, "$include": "/pg/fullgen.UNISCHEMA" },
+
+    "processor": { "type": "string", "default": "empty", "$jPGTest": ["$jcs", "empty", "normal" ] }
+  },
+  "additionalProperties": false
+}

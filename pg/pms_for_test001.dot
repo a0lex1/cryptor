@@ -1,0 +1,105 @@
+strict digraph {
+	graph [bb="0,0,1586.2,551.42"];
+	node [label="\N"];
+	0	[color="#0000aa",
+		height=2.2195,
+		label="{'acts': [('always', None, '!hlt', None)],
+ 'e': 0,
+ 't': 0,
+ 'tt': 'R',
+ 'waker': 2,
+ 'waker_name': 'wfo',
+ 'waker_nobjs': 1}
+",
+		penwidth=3,
+		pos="749.33,471.52",
+		width=4.5176];
+	1	[height=2.5142,
+		label="{'acts': [('one-shot', 1000, 'cocrel', None)],
+ 'e': 1,
+ 't': 1,
+ 'timeofs': 900,
+ 'tt': 'R',
+ 'waker': 1,
+ 'waker_name': 'iocp',
+ '\
+waker_nobjs': 3}
+",
+		pos="358.33,265.1",
+		width=5.0087];
+	0 -> 1	[pos="e,482.29,330.91 638.86,412.76 592.94,388.75 539.24,360.68 491.19,335.56"];
+	4	[fillcolor="#eeeeee",
+		height=2.5142,
+		label="{'acts': [('trigger', 3000, '!wake', 1),
+          ('trigger', 3100, '!wake', 1),
+          ('trigger', 3200, '!wake', 1),
+          ('\
+upidx_eq', 4000, '!call_userproc', 1)],
+ 'e': 4,
+ 't': 4,
+ 'timeofs': 1200,
+ 'tt': 'G'}
+",
+		pos="749.33,265.1",
+		style=filled,
+		width=5.3426];
+	0 -> 4	[pos="e,749.33,355.81 749.33,391.48 749.33,383.09 749.33,374.47 749.33,365.87"];
+	5	[height=1.9249,
+		label="{'acts': [('always', -1, 'cocrel', None),
+          ('always', -1, 'loadlib', None)],
+ 'e': 5,
+ 't': 5,
+ 'timeofs': 1400,
+ 'tt': '\
+R'}
+",
+		pos="1118.3,265.1",
+		width=4.3998];
+	0 -> 5	[pos="e,1021.2,319.89 856.56,411.12 905.54,383.98 963.38,351.94 1012.2,324.88"];
+	2	[height=1.9249,
+		label="{'acts': [('trigger', 1500, '!wake', 2),
+          ('upidx_eq', 2000, '!call_userproc', 2)],
+ 'e': 2,
+ 't': 2,
+ 'timeofs': 1300,
+ '\
+tt': 'R'}
+",
+		pos="192.33,69.296",
+		width=5.3426];
+	1 -> 2	[pos="e,248.34,135.68 287.69,181.63 276.8,168.92 265.63,155.87 254.93,143.38"];
+	3	[height=1.6303,
+		label="{'acts': [('always', None, '!hlt', None)],
+ 'e': 3,
+ 't': 3,
+ 'timeofs': 2400,
+ 'tt': 'R'}
+",
+		pos="565.33,69.296",
+		width=4.5176];
+	1 -> 3	[pos="e,507.67,124.28 442.83,184.99 461.9,167.14 481.87,148.44 500.01,131.45"];
+	6	[fillcolor="#eeeeee",
+		height=1.6303,
+		label="{'acts': [('always', None, '!hlt', None)],
+ 'e': 1,
+ 't': 6,
+ 'timeofs': 1800,
+ 'tt': 'G'}
+",
+		pos="1013.3,69.296",
+		style=filled,
+		width=4.5176];
+	5 -> 6	[pos="e,1044.1,127.11 1082.2,197.41 1071.4,177.56 1059.7,155.84 1049,136.05"];
+	7	[height=1.9249,
+		label="{'acts': [('upidx_eq', 4530, '!call_userproc', 3),
+          ('trigger', 3000, '!wake', 2)],
+ 'e': 2,
+ 't': 7,
+ 'timeofs': 1900,
+ '\
+tt': 'R'}
+",
+		pos="1390.3,69.296",
+		width=5.4408];
+	5 -> 7	[pos="e,1304.3,131.61 1200.3,205.69 1230.5,184.21 1264.9,159.71 1296,137.51"];
+}

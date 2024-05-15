@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "cpu": { "type": "string", "default": "intel86", "$jhint": ["$jcs", "intel86", "intel64", "arm_todo"] },
+    "bin_type": { "type": "string", "default": "win_shellcode", "$jhint": ["$jcs", "win_shellcode", "win_exe", "win_dll", "linux_shellcode", "linux_elf" ] },
+    "dll_evil_from_dllmain": { "type": "boolean", "default": false },
+    "stomp": { "type": "boolean", "default": false },
+    "postfn_rva": { "type": "string", "default": "", "pattern": "^[a-zA-Z0-9x]*$" },
+    "postfn_decl_args": { "type": "string", "default": "", "pattern": "^[a-zA-Z0-9 ()`,&]*$", "$jWarning": "To express present, but empty args, use space character" },
+    "postfn_fromdll_call_args": { "type": "string", "default": "", "pattern": "^[a-zA-Z0-9 ()`,&]*$" },
+    "postfn_fromexe_call_args": { "type": "string", "default": "", "pattern": "^[a-zA-Z0-9 ()`,&]*$" },
+    "export_decl_args": { "type": "string", "default": "", "pattern": "^[a-zA-Z0-9 ()`,&]*$" },
+    "export_def_call_args": { "type": "string", "default": "", "pattern": "^[a-zA-Z0-9 ()`,&]*$" },
+    "export_name": { "type": "string", "default": "", "pattern": "^[a-zA-Z0-9_]*$" }
+  },
+  "additionalProperties": false
+}
+

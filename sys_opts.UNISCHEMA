@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "portable_binhide": {"type": "boolean", "default": false}
+  },
+  "additionalProperties": false
+}

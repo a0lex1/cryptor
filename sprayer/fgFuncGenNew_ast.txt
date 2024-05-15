@@ -1,0 +1,734 @@
+  @block_bef@; // [bb 0]
+  if (g_sdw0[0x1] != (g_sdw0[0x1] + 0x45972d52)) { // ncond 0 // True
+    @block_bef@; // [bb 1]
+    if ((a3 == 48 && a1 == 32) == 0x1) { // ncond 1 // Role 0 swkey 1
+      @block_bef@; // [bb 2]
+      if (dw3[0x0] != dw0[0x0]) { // ncond 2 // True
+        @block_bef@; // [bb 3]
+        if (g_sdw0[0x2] != (dw3[0x0] * dw0[0x0])) { // ncond 3 // True
+          @block_bef@; // [bb 4]
+          if (dw3[0x0] == ((g_sdw0[0x0] + (0xfdc84599 - dw3[0x0])) + 0xda20b336)) { // ncond 4 // True
+            @block_bef@; // [bb 5]
+            if (g_sdw0[0x2] == (((0x3de4150b + (dw0[0x0] - 0x7ad7b258)) - dw0[0x0]) + 0x3cf39d50)) { // ncond 5 // True
+            };
+            @block_aft@; // [ba 7]
+            if ((g_sdw0[0x2] + g_sdw0[0x1]) != ((0x41ee9c0c * dw3[0x0]) - ((0x47bd6a11 * (dw3[0x0] + dw3[0x0])) + dw3[0x0]))) { // ncond 6 // True
+              @block_bef@; // [bb 8]
+              if ((g_sdw0[0x0] + (0xf1ccaea7 * (g_sdw0[0x1] - (g_sdw0[0x1] + 0xb1183344)))) == (((((0x86033b4b + dw0[0x0]) + 0x73903db8) - dw0[0x0]) + (((0xa1d0f059 - g_sdw0[0x2]) * (dw3[0x0] - dw3[0x0])) - g_sdw0[0x0])) + 0x2e9adda3)) { // ncond 7 // True
+                @block_bef@; // [bb 9]
+                while (somecond) {
+                  @block_bef@; // [bb 10]
+                };
+                @block_aft@; // [ba 11]
+                @roleact@0@1@0@;
+                @block_aft@; // [ba 12]
+              };
+              @block_aft@; // [ba 13]
+              if (@false@) {
+                @block_bef@; // [bb 14]
+              };
+              @block_aft@; // [ba 15]
+              while (somecond) {
+                @block_bef@; // [bb 16]
+              };
+              @block_aft@; // [ba 17]
+            };
+            @block_aft@; // [ba 18]
+          };
+          @block_aft@; // [ba 19]
+        };
+        @block_aft@; // [ba 20]
+      };
+      @block_aft@; // [ba 21]
+    };
+    @block_aft@; // [ba 22]
+  };
+  @block_aft@; // [ba 23]
+  if (@true@) {
+    @block_bef@; // [bb 24]
+    for (anyvar=0x0; 0x1 < 0x2; x++) {
+      @block_bef@; // [bb 25]
+    };
+    @block_aft@; // [ba 26]
+    if (@rolecond@1@1@) {
+      @block_bef@; // [bb 27]
+      @roleact@1@1@0@;
+      @block_aft@; // [ba 28]
+    };
+    @block_aft@; // [ba 29]
+    while (somecond) {
+      @block_bef@; // [bb 30]
+    };
+    @block_aft@; // [ba 31]
+    if (@false@) {
+      @block_bef@; // [bb 32]
+    };
+    @block_aft@; // [ba 33]
+  };
+  @block_aft@; // [ba 34]
+  if (@true@) {
+    @block_bef@; // [bb 35]
+    while (somecond) {
+      @block_bef@; // [bb 36]
+    };
+    @block_aft@; // [ba 37]
+    while (somecond) {
+      @block_bef@; // [bb 38]
+    };
+    @block_aft@; // [ba 39]
+    if (@true@) {
+      @block_bef@; // [bb 40]
+    }
+    else {
+      @block_bef@; // [bb 42]
+      if (@false@) {
+        @block_bef@; // [bb 43]
+      };
+      @block_aft@; // [ba 44]
+    };
+    @block_aft@; // [ba 41]
+    if (@true@) {
+      @block_bef@; // [bb 45]
+      if (@rolecond@2@1@) {
+        @block_bef@; // [bb 46]
+        if (@true@) {
+          @block_bef@; // [bb 47]
+          @roleact@2@1@0@;
+          @block_aft@; // [ba 48]
+        };
+        @block_aft@; // [ba 49]
+      };
+      @block_aft@; // [ba 50]
+    };
+    @block_aft@; // [ba 51]
+  };
+  @block_aft@; // [ba 52]
+  if (@true@) {
+    @block_bef@; // [bb 53]
+    if (@true@) {
+      @block_bef@; // [bb 54]
+      if (@true@) {
+        @block_bef@; // [bb 55]
+        if (@rolecond@3@1@) {
+          @block_bef@; // [bb 56]
+          if (@true@) {
+            @block_bef@; // [bb 57]
+            if (@false@) {
+              @block_bef@; // [bb 58]
+            };
+            @block_aft@; // [ba 59]
+          };
+          @block_aft@; // [ba 60]
+          if (@true@) {
+            @block_bef@; // [bb 61]
+            @roleact@3@1@0@;
+            @block_aft@; // [ba 62]
+          };
+          @block_aft@; // [ba 63]
+          if (@false@) {
+            @block_bef@; // [bb 64]
+          };
+          @block_aft@; // [ba 65]
+          if (@true@) {
+            @block_bef@; // [bb 66]
+            if (@true@) {
+              @block_bef@; // [bb 67]
+            };
+            @block_aft@; // [ba 68]
+          };
+          @block_aft@; // [ba 69]
+        };
+        @block_aft@; // [ba 70]
+      };
+      @block_aft@; // [ba 71]
+    };
+    @block_aft@; // [ba 72]
+  };
+  @block_aft@; // [ba 73]
+  if (@true@) {
+    @block_bef@; // [bb 74]
+    while (somecond) {
+      @block_bef@; // [bb 75]
+      if (@true@) {
+        @block_bef@; // [bb 76]
+      };
+      @block_aft@; // [ba 77]
+    };
+    @block_aft@; // [ba 78]
+    if (@true@) {
+      @block_bef@; // [bb 79]
+      if (@false@) {
+        @block_bef@; // [bb 80]
+        if (@true@) {
+          @block_bef@; // [bb 81]
+        };
+        @block_aft@; // [ba 82]
+      };
+      @block_aft@; // [ba 83]
+      for (anyvar=0x0; 0x1 < 0x2; x++) {
+        @block_bef@; // [bb 84]
+        if (@false@) {
+          @block_bef@; // [bb 85]
+        };
+        @block_aft@; // [ba 86]
+      };
+      @block_aft@; // [ba 87]
+      if (@rolecond@4@1@) {
+        @block_bef@; // [bb 88]
+        @roleact@4@1@0@;
+        @block_aft@; // [ba 89]
+      }
+      else {
+        @block_bef@; // [bb 91]
+      };
+      @block_aft@; // [ba 90]
+    };
+    @block_aft@; // [ba 92]
+  };
+  @block_aft@; // [ba 93]
+  if (@true@) {
+    @block_bef@; // [bb 94]
+    if (@rolecond@5@1@) {
+      @block_bef@; // [bb 95]
+      if (@true@) {
+        @block_bef@; // [bb 96]
+        if (@true@) {
+          @block_bef@; // [bb 97]
+          if (@true@) {
+            @block_bef@; // [bb 98]
+            if (@false@) {
+              @block_bef@; // [bb 99]
+            };
+            @block_aft@; // [ba 100]
+            if (@false@) {
+              @block_bef@; // [bb 101]
+              if (@true@) {
+                @block_bef@; // [bb 102]
+              };
+              @block_aft@; // [ba 103]
+            };
+            @block_aft@; // [ba 104]
+            if (@true@) {
+              @block_bef@; // [bb 105]
+              @roleact@5@1@0@;
+              @block_aft@; // [ba 106]
+            };
+            @block_aft@; // [ba 107]
+          };
+          @block_aft@; // [ba 108]
+        };
+        @block_aft@; // [ba 109]
+      };
+      @block_aft@; // [ba 110]
+    };
+    @block_aft@; // [ba 111]
+  };
+  @block_aft@; // [ba 112]
+  if (@true@) {
+    @block_bef@; // [bb 113]
+    if (@true@) {
+      @block_bef@; // [bb 114]
+    };
+    @block_aft@; // [ba 115]
+    if (@rolecond@6@1@) {
+      @block_bef@; // [bb 116]
+      @roleact@6@1@0@;
+      @block_aft@; // [ba 117]
+    }
+    else {
+      @block_bef@; // [bb 119]
+      while (somecond) {
+        @block_bef@; // [bb 120]
+      };
+      @block_aft@; // [ba 121]
+    };
+    @block_aft@; // [ba 118]
+    if (@false@) {
+      @block_bef@; // [bb 122]
+    };
+    @block_aft@; // [ba 123]
+  };
+  @block_aft@; // [ba 124]
+  if (@true@) {
+    @block_bef@; // [bb 125]
+    if (@rolecond@7@1@) {
+      @block_bef@; // [bb 126]
+      @roleact@7@1@0@;
+      @block_aft@; // [ba 127]
+    }
+    else {
+      @block_bef@; // [bb 129]
+      if (@true@) {
+        @block_bef@; // [bb 130]
+      };
+      @block_aft@; // [ba 131]
+    };
+    @block_aft@; // [ba 128]
+    for (anyvar=0x0; 0x1 < 0x2; x++) {
+      @block_bef@; // [bb 132]
+    };
+    @block_aft@; // [ba 133]
+  };
+  @block_aft@; // [ba 134]
+  if (@true@) {
+    @block_bef@; // [bb 135]
+    if (@false@) {
+      @block_bef@; // [bb 136]
+    }
+    else {
+      @block_bef@; // [bb 138]
+    };
+    @block_aft@; // [ba 137]
+    for (anyvar=0x0; 0x1 < 0x2; x++) {
+      @block_bef@; // [bb 139]
+    };
+    @block_aft@; // [ba 140]
+    if (@rolecond@8@1@) {
+      @block_bef@; // [bb 141]
+      if (@true@) {
+        @block_bef@; // [bb 142]
+        while (somecond) {
+          @block_bef@; // [bb 143]
+        };
+        @block_aft@; // [ba 144]
+        if (@true@) {
+          @block_bef@; // [bb 145]
+          if (@true@) {
+            @block_bef@; // [bb 146]
+          };
+          @block_aft@; // [ba 147]
+        };
+        @block_aft@; // [ba 148]
+        @roleact@8@1@0@;
+        @block_aft@; // [ba 149]
+      };
+      @block_aft@; // [ba 150]
+    };
+    @block_aft@; // [ba 151]
+  };
+  @block_aft@; // [ba 152]
+  if (@true@) {
+    @block_bef@; // [bb 153]
+    if (@true@) {
+      @block_bef@; // [bb 154]
+      if (@rolecond@9@1@) {
+        @block_bef@; // [bb 155]
+        @roleact@9@1@0@;
+        @block_aft@; // [ba 156]
+      };
+      @block_aft@; // [ba 157]
+    };
+    @block_aft@; // [ba 158]
+    while (somecond) {
+      @block_bef@; // [bb 159]
+      for (anyvar=0x0; 0x1 < 0x2; x++) {
+        @block_bef@; // [bb 160]
+      };
+      @block_aft@; // [ba 161]
+      if (@false@) {
+        @block_bef@; // [bb 162]
+      };
+      @block_aft@; // [ba 163]
+    };
+    @block_aft@; // [ba 164]
+    if (@true@) {
+      @block_bef@; // [bb 165]
+    };
+    @block_aft@; // [ba 166]
+  };
+  @block_aft@; // [ba 167]
+  if (@true@) {
+    @block_bef@; // [bb 168]
+    if (@false@) {
+      @block_bef@; // [bb 169]
+      if (@true@) {
+        @block_bef@; // [bb 170]
+        for (anyvar=0x0; 0x1 < 0x2; x++) {
+          @block_bef@; // [bb 171]
+        };
+        @block_aft@; // [ba 172]
+      };
+      @block_aft@; // [ba 173]
+    };
+    @block_aft@; // [ba 174]
+    if (@true@) {
+      @block_bef@; // [bb 175]
+      if (@rolecond@10@1@) {
+        @block_bef@; // [bb 176]
+        if (@true@) {
+          @block_bef@; // [bb 177]
+          @roleact@10@1@0@;
+          @block_aft@; // [ba 178]
+        };
+        @block_aft@; // [ba 179]
+      };
+      @block_aft@; // [ba 180]
+    }
+    else {
+      @block_bef@; // [bb 182]
+      while (somecond) {
+        @block_bef@; // [bb 183]
+      };
+      @block_aft@; // [ba 184]
+    };
+    @block_aft@; // [ba 181]
+  };
+  @block_aft@; // [ba 185]
+  if (@true@) {
+    @block_bef@; // [bb 186]
+    if (@true@) {
+      @block_bef@; // [bb 187]
+      if (@true@) {
+        @block_bef@; // [bb 188]
+        if (@rolecond@11@1@) {
+          @block_bef@; // [bb 189]
+          @roleact@11@1@0@;
+          @block_aft@; // [ba 190]
+        };
+        @block_aft@; // [ba 191]
+      }
+      else {
+        @block_bef@; // [bb 193]
+      };
+      @block_aft@; // [ba 192]
+    }
+    else {
+      @block_bef@; // [bb 195]
+    };
+    @block_aft@; // [ba 194]
+    if (@false@) {
+      @block_bef@; // [bb 196]
+    };
+    @block_aft@; // [ba 197]
+  };
+  @block_aft@; // [ba 198]
+  if (@true@) {
+    @block_bef@; // [bb 199]
+    if (@rolecond@12@1@) {
+      @block_bef@; // [bb 200]
+      if (@true@) {
+        @block_bef@; // [bb 201]
+        @roleact@12@1@0@;
+        @block_aft@; // [ba 202]
+      };
+      @block_aft@; // [ba 203]
+    };
+    @block_aft@; // [ba 204]
+    if (@true@) {
+      @block_bef@; // [bb 205]
+      while (somecond) {
+        @block_bef@; // [bb 206]
+        if (@false@) {
+          @block_bef@; // [bb 207]
+        };
+        @block_aft@; // [ba 208]
+      };
+      @block_aft@; // [ba 209]
+    };
+    @block_aft@; // [ba 210]
+  };
+  @block_aft@; // [ba 211]
+  if (@true@) {
+    @block_bef@; // [bb 212]
+    if (@rolecond@13@1@) {
+      @block_bef@; // [bb 213]
+      @roleact@13@1@0@;
+      @block_aft@; // [ba 214]
+    }
+    else {
+      @block_bef@; // [bb 216]
+    };
+    @block_aft@; // [ba 215]
+    if (@false@) {
+      @block_bef@; // [bb 217]
+      if (@true@) {
+        @block_bef@; // [bb 218]
+        if (@true@) {
+          @block_bef@; // [bb 219]
+        }
+        else {
+          @block_bef@; // [bb 221]
+          if (@false@) {
+            @block_bef@; // [bb 222]
+          };
+          @block_aft@; // [ba 223]
+        };
+        @block_aft@; // [ba 220]
+      };
+      @block_aft@; // [ba 224]
+      if (@false@) {
+        @block_bef@; // [bb 225]
+        if (@true@) {
+          @block_bef@; // [bb 226]
+        };
+        @block_aft@; // [ba 227]
+      };
+      @block_aft@; // [ba 228]
+    };
+    @block_aft@; // [ba 229]
+    while (somecond) {
+      @block_bef@; // [bb 230]
+    };
+    @block_aft@; // [ba 231]
+    if (@true@) {
+      @block_bef@; // [bb 232]
+    };
+    @block_aft@; // [ba 233]
+  };
+  @block_aft@; // [ba 234]
+  if (@true@) {
+    @block_bef@; // [bb 235]
+    if (@true@) {
+      @block_bef@; // [bb 236]
+    }
+    else {
+      @block_bef@; // [bb 238]
+    };
+    @block_aft@; // [ba 237]
+    if (@true@) {
+      @block_bef@; // [bb 239]
+      if (@rolecond@14@1@) {
+        @block_bef@; // [bb 240]
+        @roleact@14@1@0@;
+        @block_aft@; // [ba 241]
+      };
+      @block_aft@; // [ba 242]
+    };
+    @block_aft@; // [ba 243]
+  };
+  @block_aft@; // [ba 244]
+  if (@rolecond@15@1@) {
+    @block_bef@; // [bb 245]
+    if (@true@) {
+      @block_bef@; // [bb 246]
+      if (@true@) {
+        @block_bef@; // [bb 247]
+        while (somecond) {
+          @block_bef@; // [bb 248]
+          if (@true@) {
+            @block_bef@; // [bb 249]
+            if (@true@) {
+              @block_bef@; // [bb 250]
+            };
+            @block_aft@; // [ba 251]
+          };
+          @block_aft@; // [ba 252]
+          if (@true@) {
+            @block_bef@; // [bb 253]
+          };
+          @block_aft@; // [ba 254]
+        };
+        @block_aft@; // [ba 255]
+        if (@true@) {
+          @block_bef@; // [bb 256]
+          @roleact@15@1@0@;
+          @block_aft@; // [ba 257]
+        };
+        @block_aft@; // [ba 258]
+      };
+      @block_aft@; // [ba 259]
+    };
+    @block_aft@; // [ba 260]
+    if (@false@) {
+      @block_bef@; // [bb 261]
+    };
+    @block_aft@; // [ba 262]
+    if (@false@) {
+      @block_bef@; // [bb 263]
+      while (somecond) {
+        @block_bef@; // [bb 264]
+      };
+      @block_aft@; // [ba 265]
+    };
+    @block_aft@; // [ba 266]
+  };
+  @block_aft@; // [ba 267]
+  if (@true@) {
+    @block_bef@; // [bb 268]
+    while (somecond) {
+      @block_bef@; // [bb 269]
+    };
+    @block_aft@; // [ba 270]
+    while (somecond) {
+      @block_bef@; // [bb 271]
+    };
+    @block_aft@; // [ba 272]
+    if (@false@) {
+      @block_bef@; // [bb 273]
+    };
+    @block_aft@; // [ba 274]
+    if (@true@) {
+      @block_bef@; // [bb 275]
+      if (@true@) {
+        @block_bef@; // [bb 276]
+      };
+      @block_aft@; // [ba 277]
+      if (@rolecond@16@1@) {
+        @block_bef@; // [bb 278]
+        @roleact@16@1@0@;
+        @block_aft@; // [ba 279]
+      };
+      @block_aft@; // [ba 280]
+    };
+    @block_aft@; // [ba 281]
+    if (@true@) {
+      @block_bef@; // [bb 282]
+      if (@true@) {
+        @block_bef@; // [bb 283]
+      };
+      @block_aft@; // [ba 284]
+    };
+    @block_aft@; // [ba 285]
+    if (@false@) {
+      @block_bef@; // [bb 286]
+    };
+    @block_aft@; // [ba 287]
+    if (@false@) {
+      @block_bef@; // [bb 288]
+    };
+    @block_aft@; // [ba 289]
+  };
+  @block_aft@; // [ba 290]
+  if (@true@) {
+    @block_bef@; // [bb 291]
+    if (@true@) {
+      @block_bef@; // [bb 292]
+    };
+    @block_aft@; // [ba 293]
+    if (@true@) {
+      @block_bef@; // [bb 294]
+      if (@true@) {
+        @block_bef@; // [bb 295]
+        if (@rolecond@17@1@) {
+          @block_bef@; // [bb 296]
+          @roleact@17@1@0@;
+          @block_aft@; // [ba 297]
+        };
+        @block_aft@; // [ba 298]
+        for (anyvar=0x0; 0x1 < 0x2; x++) {
+          @block_bef@; // [bb 299]
+        };
+        @block_aft@; // [ba 300]
+        while (somecond) {
+          @block_bef@; // [bb 301]
+          if (@false@) {
+            @block_bef@; // [bb 302]
+          };
+          @block_aft@; // [ba 303]
+        };
+        @block_aft@; // [ba 304]
+        for (anyvar=0x0; 0x1 < 0x2; x++) {
+          @block_bef@; // [bb 305]
+          if (@false@) {
+            @block_bef@; // [bb 306]
+          };
+          @block_aft@; // [ba 307]
+        };
+        @block_aft@; // [ba 308]
+      };
+      @block_aft@; // [ba 309]
+    };
+    @block_aft@; // [ba 310]
+  };
+  @block_aft@; // [ba 311]
+  if (@true@) {
+    @block_bef@; // [bb 312]
+    if (@true@) {
+      @block_bef@; // [bb 313]
+      if (@true@) {
+        @block_bef@; // [bb 314]
+        if (@true@) {
+          @block_bef@; // [bb 315]
+          if (@rolecond@18@1@) {
+            @block_bef@; // [bb 316]
+            @roleact@18@1@0@;
+            @block_aft@; // [ba 317]
+          };
+          @block_aft@; // [ba 318]
+        };
+        @block_aft@; // [ba 319]
+        if (@true@) {
+          @block_bef@; // [bb 320]
+          for (anyvar=0x0; 0x1 < 0x2; x++) {
+            @block_bef@; // [bb 321]
+          };
+          @block_aft@; // [ba 322]
+        };
+        @block_aft@; // [ba 323]
+        if (@true@) {
+          @block_bef@; // [bb 324]
+          if (@false@) {
+            @block_bef@; // [bb 325]
+          };
+          @block_aft@; // [ba 326]
+        }
+        else {
+          @block_bef@; // [bb 328]
+        };
+        @block_aft@; // [ba 327]
+      };
+      @block_aft@; // [ba 329]
+    }
+    else {
+      @block_bef@; // [bb 331]
+      while (somecond) {
+        @block_bef@; // [bb 332]
+      };
+      @block_aft@; // [ba 333]
+    };
+    @block_aft@; // [ba 330]
+  };
+  @block_aft@; // [ba 334]
+  if (@true@) {
+    @block_bef@; // [bb 335]
+    while (somecond) {
+      @block_bef@; // [bb 336]
+      if (@false@) {
+        @block_bef@; // [bb 337]
+      };
+      @block_aft@; // [ba 338]
+    };
+    @block_aft@; // [ba 339]
+    if (@false@) {
+      @block_bef@; // [bb 340]
+    };
+    @block_aft@; // [ba 341]
+    if (@true@) {
+      @block_bef@; // [bb 342]
+    };
+    @block_aft@; // [ba 343]
+    if (@rolecond@19@1@) {
+      @block_bef@; // [bb 344]
+      @roleact@19@1@0@;
+      @block_aft@; // [ba 345]
+    }
+    else {
+      @block_bef@; // [bb 347]
+    };
+    @block_aft@; // [ba 346]
+    if (@false@) {
+      @block_bef@; // [bb 348]
+      for (anyvar=0x0; 0x1 < 0x2; x++) {
+        @block_bef@; // [bb 349]
+      };
+      @block_aft@; // [ba 350]
+    };
+    @block_aft@; // [ba 351]
+  };
+  @block_aft@; // [ba 352]
+  if (@rolecond@20@1@) {
+    @block_bef@; // [bb 353]
+    if (@true@) {
+      @block_bef@; // [bb 354]
+      @roleact@20@1@0@;
+      @block_aft@; // [ba 355]
+    };
+    @block_aft@; // [ba 356]
+  };
+  @block_aft@; // [ba 357]
+  if (@rolecond@21@1@) {
+    @block_bef@; // [bb 358]
+    @roleact@21@1@0@;
+    @block_aft@; // [ba 359]
+  };
+  @block_aft@; // [ba 360]

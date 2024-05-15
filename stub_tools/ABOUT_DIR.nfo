@@ -1,0 +1,6 @@
+tools called in process of building evil
+
+the only exception is binhide, which is called directly from VS GUI and has
+no %PATH% configured; we are planning to introduce `naked_tools` dir for it.
+
+

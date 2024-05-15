@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "num_mods_sx": {"type": "string", "default": "1..7"},
+    "trash_percent_sx": {"type": "string", "default": "150..350" },
+    "use_all": {"type": "boolean", "default": false},
+    "touchprjs": {"type": "string", "default": "*", "$jhint": "RESERVED!NOT REAL!"}
+  },
+  "additionalProperties": false
+}

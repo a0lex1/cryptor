@@ -1,0 +1,1 @@
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\virprog.exe" /v Debugger /d vsjitdebugger.exe /t REG_SZ

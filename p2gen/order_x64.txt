@@ -1,0 +1,6 @@
+?p2code@@YAKPEAXKKPEAPEAX@Z
+?p2code_end@@YAHXZ
+?democode@@YAKXZ
+?democode_end@@YAHXZ
+?tbdemocode@@YAKXZ
+?tbdemocode_end@@YAHXZ

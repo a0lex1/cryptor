@@ -1,0 +1,4 @@
+UPD: To find out how to create Gather.button+Test.button (which are compatible with new concepts), see papers/GATHER.TXT
+
+
+Reworked popimps, but not changed paths to it in touchprj_from_popularimps.py

@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "testbin_configuration": {"type": "string", "default": "Release"},
+    "testbin_bitness": {"type": "number", "default": 64,
+                                          "$jPayTest":        ["$jcn", "32", "64"],
+                                          "$jEVPTest":        ["$jcn", "32", "64"],
+                                          "$jPartTest":       ["$jcn", "32", "64"],
+                                          "$jRGOldTest":      ["$jcn", "64"]
+                       },
+    "target_projects": {"type": "string", "default": "virprog,virlib"}
+  },
+  "additionalProperties": false
+}

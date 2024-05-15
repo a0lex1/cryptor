@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "initial_prots": {"type": "string", "default": "rw,rwx", "$jSecProtTest": ["$jcs", "rw", "rwx"], "$jEVPTest": ["$jcs", "rw", "rwx"]},
+    "exact": {"type": "boolean", "default": false, "$jSecProtTest": ["$jcb", "true", "false"], "$jEVPTest": ["$jcb", "true", "false"]},
+    "probab_unnecess_reprot": {"type": "number", "default": 50, "$jSecProtTest": ["$jcn", "100", "49", "0"], "$jEVPTest": ["$jcn", "100", "0"]},
+    "shuffle": {"type": "boolean", "default": true, "$jSecProtTest": ["$jcb", "true", "false"], "$jEVPTest": ["$jcb", "true", "false"]}
+  },
+  "additionalProperties": false
+}

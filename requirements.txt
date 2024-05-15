@@ -1,0 +1,12 @@
+hexdump
+jsonschema
+dpath
+matplotlib
+networkx
+indexed
+pywin32
+pefile
+prettytable
+sortedcollections
+pydot
+scikit-learn

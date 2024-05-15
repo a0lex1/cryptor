@@ -1,0 +1,38 @@
+var_picking/ - the data flow is encapsulated here
+
+_coast.py became not needed
+
+Possible TODO(s):
+  Coasts on edges (pre-initialize L/R coast cells nearby Var edges)
+  Seqnum reset (so it won't go slow/wrong)
+
+
+How to debug vrp_sample.py
+
+Some fields are to be looking on BEFORE the operation, others after.
+
++------------+-------------------+------+------+------+------+------+------+------+-
+|    VL0     |        LAY        |  #0  |  #1  |  #2  |  #3  |  #4  |  #5  |  #6  |  
++------------+-------------------+------+------+------+------+------+------+------+--
+| [0][0] i16 |        seq        |  0   |  0   |  0   |  31  |  32  |  33  |  34  |<- set before the operation
+|            |       aster       |      |      |      |      |      |      |      |
+|            |       Lcoast      | 0.11 | 0.25 | 1.0  |  0   |  0   |  0   |  0   |<- set before the operation
+|            |       Rcoast      |  0   |  0   |  0   |  0   |  0   |  0   |  0   |<- set before the operation
+|            |     coastness     | 0.0  | 0.0  | 0.0  | 0.0  | 0.0  | 0.0  | 0.0  |<---- Insular's thing, 1 is max; formula of getting dbg_final_candwei is hidden in code
+|            |    dbg_candwei    | None | None | None |  31  |  33  |  35  |  36  |<---- weight processed by SeqBased        THESE
+|            | dbg_final_candwei | None | None | None |  31  |  33  |  35  |  36  |<---- Insular's thing, the final wei      THREE FIELDS REFLECTS JUST-DONE READ/WRITE
+|            |                   |      |      |      |      |      |      |      |
+| [0][1] u8  |        seq        |  59  |  60  |  61  |  62  |  63  |  64  |  65  |  
+|            |       aster       |      |      |      |      |      |      |      |  
+|            |       Lcoast      |  0   |  0   |  0   |  0   |  0   |  0   |  0   |  
+|            |       Rcoast      |  0   |  0   |  0   |  0   |  0   |  0   |  0   |  
+|            |     coastness     | 0.0  | 0.0  | 0.0  | 0.0  | None | None | None |
+|            |    dbg_candwei    |  28  |  29  |  30  |  31  |  32  |  33  |  34  |
+|            | dbg_final_candwei |  28  |  29  |  30  |  31  |  32  |  33  |  34  |
+|
+
+
+test_vrpickers.py - isn't a very good test. It may need to be filled with concrete test cases.
+
+
+

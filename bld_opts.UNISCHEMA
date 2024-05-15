@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties":  {
+    "target_configs": { "type": "string", "default": "ReleaseSprayed" },
+    "target_projects": { "type": "string", "default": "virprog,virlib" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,60 @@
+'''
+concept:
+paytest.py --testbin_configuration $jcs Release --testbin_bitness $jcn 32 64  --jen_order bitness
+
+- postfn not tested for ???- cases
+  testbin.exe's WinMain (the default crt behavior) leads to ExitProcess after returning so we expect ExitProcess(10000) ret, not tester.exe's return 0. To crypt EXEs that returns execution, need those specific tests
+
+- We use testbin as DllInstall for regsvr32 ! everywhere don't forget to pass export_decl_args BOOL,PWSTR, etc.
+
+- /postfn only for exe-in-, dll-in-, not for sc-in-
+
+- For -in-dll, if not /export -> implies FRM (by default)
+
+- How to cover all cases (virprog, virlib with different payloads):
+  - return specific value (out-of-proc test of virprog)
+  - sets %__SHELLCODE_CALLED%, %__POSTFN_CALLED% (for inproc tests of virlib.dll, needed for FRM because there is no way to return value from DllMain in FRM )
+
+#shellcode returns 12000; WinMain returns 10000; DllInstall (our postfn) returns 0 (S_OK)
+#We have beacons __@DLLMAIN_CALLED, etc.
+See src/crp/test/testbin/tester_main.cpp
+
+
+* Table may not be up-to-date with source code! Use only as a navigator
+32/64 | Release
+            VIRPROG                                          VIRLIB
+
+SC          WinMain->SC->ret:12000                           Export->SC->ret:12000
+            [('$tester sc-in-exe $exe', 0)]                  [('$tester sc-in-dll $dll /export', 0)]
+
+SC FRM      <not aff.>                                       DllMain->SC->ret:12000
+                                                             [('$tester sc-in-dll $dll ', 0)]
+---
+
+EXE         WinMain->WinMain->ret:10000                      Export->WinMain->ret:10000
+            [('$tester exe-in-exe $exe', 0)]                 [('$tester exe-in-dll $dll /export', 0)]
+
+EXE PFN     WinMain->(WinMain, PostFN-)->ret:                Export->(WinMain, PostFN-->ret):
+            [('$tester exe-in-exe $exe /postfn', 0)]         [('$tester exe-in-dll $dll /export /postfn', 0)]
+
+EXE FRM     <not aff.>                                       DllMain->WinMain->ret:10000
+                                                             [('$tester exe-in-dll $dll ', 0), ]
+
+EXE PFN FRM <not aff.>                                       DllMain->(WinMain, PostFN-)->ret:
+                                                             [('$tester exe-in-dll $dll /postfn ', 0)]
+---
+
+DLL         WinMain->DllMain                                 Export->DllMain
+            [('$tester dll-in-exe $exe', 0)]                 [('$tester dll-in-dll $dll /export', 0)]
+
+DLL PFN     WinMain->(DllMain, PostFN)                       Export->(DllMain, DllInstall-)->ret:
+                                                             [('$tester dll-in-dll $dll /export /postfn', 0),
+             .                                                ('regsvr32 -e -n -i:CreateEvent $dll', 0)]
+
+DLL FRM     <not aff.>                                       DllMain->DllMain
+                                                             [('$tester dll-in-dll $dll', 0)]
+
+DLL PFN FRM <not aff.>  #PostfnFrmLosingReturnValue          DllMain->(DllMain, DllInstall-)->ret:
+                                                             [('$tester dll-in-dll $dll /postfn', 0)]
+
+'''

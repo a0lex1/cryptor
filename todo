@@ -1,0 +1,52 @@
+[ ] CryptbinC
+
+[ ] See FG eyes
+
+
+--- m:
+
+[ ] Finish ArgParser work (paper 54)
+
+[ ] Fix stub_tools/binhide_facade.py - remove c2.* deps cuz it's called from VS GUI where there is no special %PATH%
+
+[ ] Draft ProtoGraphGenerator (cuz fgconf is transmitted that way)
+
+[ ] Add StageRunnerExecutor (cuz need to see stage graphs when debugging FuncGen)
+
+
+problems
+  !#FIRE reskit/res_add W=H
+  !#Security ScenarioBuilder: solution name in shell command
+  !#Optimization remove TLS code if no TLS (wrap #ifdef)
+
+generic todo
+  cpp_parts everywhere zvars, not staticvars
+
+fg LOOK IDA
+  add _fk() to cpp_parts everywhere, in particular, randomize AllocationSize
+
+ae
+  aedecay - show GUI if emulated - draft
+  indirect use of ae values, mix with fake ae - make emu updates harder
+  [see bh] windef emulator linux - doesn't work, too old, refactor their code
+  mexec tool to execute on win7, etc.
+  ;blur ;gl ;speed/complexity ;single/multi entry points ;write somewhere, read in another place
+
+trasher
+  fire: apis never repeat (1api=1call)
+  fire: apis not mixed; but it's cool; maybe mix them but not randomly, humanly
+
+PROGGEN PLAN + MINIMUM WEAPON FUNCTIONALITY + OTHER FUNCTIONALITY LATER 
+  >INTEGRATING PG (continue: run pg.py, +continue output_gen.py)
+    !integrate crafted 8-thread static FG, then rewrite to automatic
+  Shuffle usercodes
+  Acts (cocrel, etc.)
+  Wakers
+  Fake Events, semas, mutexes, waitable timers
+  PMGenerator instead of hardcoded PM
+
+
+
+
+
+

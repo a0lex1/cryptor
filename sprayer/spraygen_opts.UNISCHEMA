@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "rg": {"type": "string", "default": "dumb", "$jRGOldTest": "old"},
+    "fg": {"type": "string", "default": "min", "$jhint": ["min", "new"]},
+    "rgdumb": {"$j": {"$jif": ["rg", "dumb"]}, "$include": "/sprayer/rgdumb_opts.UNISCHEMA"},
+    "rgspray": {"$j":{"$jif": ["rg", "spray"]}, "$include": "/sprayer/rgspray_opts.UNISCHEMA"},
+    "rgold": {"$j": {"$jif": ["rg", "old"]}, "$include": "/sprayer/rgold_opts.UNISCHEMA"},
+    "fgmin": {"$j": {"$jif": ["fg", "min"]}, "$include": "/sprayer/fgmin_opts.UNISCHEMA"},
+    "fgnew": {"$j": {"$jif": ["fg", "new"]}, "$include": "/sprayer/fgnew_opts.UNISCHEMA"},
+    "holders": { "type": "boolean", "default": false},
+    "sgsleep1_sx": { "type": "string", "default": "3000..6000", "$jdefault": "0..0" },
+    "sgsleep2_sx": { "type": "string", "default": "3000..6000", "$jdefault": "0..0" },
+    "rgpxlx_inline": { "type": "boolean", "default": false, "$jdefault": ["$jcb", "false", "true"] }
+  },
+  "additionalProperties": false
+}

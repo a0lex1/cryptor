@@ -1,0 +1,94 @@
+$$$add_callgroup /name chaingen_test
+
+B13()
+
+B1(&<out:Z1>)
+B2(&<out:Z2>)
+B3(&<out:Z3>)
+B4(&<out:Z4>)
+B5(&<out:Z5>)
+B6(&<out:Z6>)
+B7(<in:Z1>)
+B8(<in:Z2>)
+B9(<in:Z3>)
+B10(<in:Z4>)
+B11(<in:Z5>)
+B12(<in:Z6>)
+
+<unused::pvoid> = A18()
+A17(&<unused::i32>)
+A16(&<unused::i32>)
+A15(&<unused::i32>)
+A14(&<unused::i32>)
+A13(<inout:M>)
+
+A12(&<out:T:u8>, &<out:M>, &<out:T:u8>, <in:M>)
+A11(<in:M>, <in:MQ>)
+A10(<in:M>)
+A1(&<out:T:u8>)
+A2(&<out:M>)
+A3(<in:T>)
+A4(<in:M>)
+A5(<in:M>, &<out:MQ>)
+
+$$$add_property_json /property category_tree
+{
+  "Z1": {},
+  "Z2": {},
+  "Z3": {},
+  "Z4": {},
+  "Z5": {},
+  "Z6": {},
+
+  "T" : {
+    "TS" : {
+      "TSX": {},
+      "TSY": {},
+      "TSZ": {}
+    },
+    "TP": {
+      "TC": {},
+      "TD": {}
+    }
+  },
+  
+  "M": {
+    "MP": {},
+    "MQ": {}
+  },
+
+  "Base": { # doesn't have deftype
+    "Derived1": {
+        "Extra1": {}
+    },
+    "Derived2": {
+        "Extra2": {}
+    }
+  },
+  "XBase": { # do have deftype
+    "XDerived1": {
+        "XExtra1": {}
+    },
+    "XDerived2": {
+        "XExtra2": {}
+    }
+  }
+}
+
+$$$add_property_json /property category_deftypes
+{
+  "Z1": "u16",
+  "Z2": "u16",
+  "Z3": "u16",
+  "Z4": "u16",
+  "Z5": "u16",
+  "Z6": "u16",
+
+  "XBase": "i64",
+  "M": "i8"
+}
+
+
+
+
+

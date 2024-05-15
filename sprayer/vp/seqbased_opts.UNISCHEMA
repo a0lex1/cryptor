@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "read_weight_type": {"type": "string", "default": "hyperbola", "$jdefault": ["$jcs", "natural", "hyperbola", "linear"]},
+    "write_weight_type": {"type": "string", "default": "hyperbola", "$jdefault": ["$jcs", "natural", "hyperbola", "linear"]}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "avg_nodes_for_branch_sx": { "type": "string", "default": "0..15", "$jFGNewTest": ["$jcs", "0", "1", "2", "5..10", "70..100"] },
+    "condgen_eg_l_maxlev": { "type": "number", "default": 4 },
+    "condgen_eg_r_maxlev": { "type": "number", "default": 4 },
+    "condgen_logging": {"type": "boolean", "default": false },
+    "condgen_prefer_arridx": {"type": "boolean", "default": true },
+
+    "trash_stmts": {"type": "boolean", "default": false },
+    "dbgbreak_notreached": {"type": "boolean", "default": false },
+    "dbgbreak_elses": {"type": "boolean", "default": false }
+  }
+}
+

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "p2gen86", "p2gen86.vcxproj", "{5762D3EA-62EB-4E51-BB26-B6DE6EEEEFC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5762D3EA-62EB-4E51-BB26-B6DE6EEEEFC1}.Debug|x86.ActiveCfg = Debug|Win32
+		{5762D3EA-62EB-4E51-BB26-B6DE6EEEEFC1}.Debug|x86.Build.0 = Debug|Win32
+		{5762D3EA-62EB-4E51-BB26-B6DE6EEEEFC1}.Release|x86.ActiveCfg = Release|Win32
+		{5762D3EA-62EB-4E51-BB26-B6DE6EEEEFC1}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B3F06C1-F4EE-4AB1-8194-2B5923DCEEC7}
+	EndGlobalSection
+EndGlobal

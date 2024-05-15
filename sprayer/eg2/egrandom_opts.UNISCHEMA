@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "properties": {
+    "reserved":  {"type":"number", "default": 1}
+  }
+}

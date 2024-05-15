@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "a": {"type": "number", "default": 0},
+    "b": {"$include": "/2.UNISCHEMA"}
+  }
+}

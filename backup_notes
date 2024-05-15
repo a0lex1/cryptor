@@ -1,0 +1,476 @@
+Multithreaded FGs in spraygen [!] [!] [!]
+simple_seed_test -> seed_test that is run by simple_seed_test and full_seed_test (with fgnew/rgold, rng determinism in multithreaded mode in spraygen.py)
+new fgnew opts: condgen_*, trash_stmts, 
+SLEEP_RELEASE_ONLY - now no Sleep(s) in DebugSprayed
+fgfull_confgen removed
+6:48 PM 12/9/2023
+
+
+Now adding DebugBreak(/*NOTREACHED*/) in Flow.NOT_EXEC blocks
+1:21 AM 12/6/2023
+
+
+vrp_sample.py looks like it works [!] [!] [!] [!] seqbased/insular, good coasts, read/write look good
+Now need to:
+  implement replers for cpp code (roles)
+  implement dataflow stmts with ExprGen
+  play with vrp_sample.py on low-sizes Vars (like in real scenarios)
+6:42 PM 11/27/2023
+
+
+Integrating new VRPicker, currently working in fixing errors regime:
+cls && py -m c2.sprayer.vp.test_vrpickers
+Don't forget: #NotAddedToTests test_var_picking needs VRPickerTest([]).execute()
+Then can get back to vrp_sample.py, look with eyes, develop coasts
+4:57 AM 11/25/2023
+
+Progress with sample, looks nice!
+4:21 PM 11/3/2023
+
+Working on sample_value_range_picker.py
+7:55 PM 11/2/2023
+
+VarStorage refactored, interface changed, class VLI(Enum) ADDED [!]
+2:53 PM 10/4/2023
+
+ADDED: var_picking/ fg/replers +added to tests [!] [!]
+now need to develop eye sample for ValueRangePickerDF [!]
+9:52 PM 10/3/2023
+
+some fgnew things fixed so it really works (it's #NotAddedToTests yet)
+3:42 PM 10/1/2023
+
+EG rework [!] [!]
+REMOVED returning logical value in NodeVisitor. It didn't work anyway.
+ADDED _parent_node_stack to NodeVisitor
+requirements.txt created
+1:26 PM 10/1/2023
+
+eg2.egcli test works, next to integrate it to 1) unit tests 2) FG 3) Ctrl+Shift+F other places
+old eg removed, eg2 integrated to all.py tests (parallel supported) - test_exprgens
+old VarPicker removed from gens/, now df/random_var_picker.py
+FuncGenWAround removed
+3:24 PM 9/28/2023
+
+ADDED test_spraygen rgpxlx_inine test
+now developing/drafting picking in WAroundFinalizer
+2:13 PM 9/26/2023
+
+__st_reassign_changed_code_lines and company things. __fn_create_pxlx_line_node created - code moved outside RoleGen to spraygen, RoleGenOld patched so it support it
+9:46 PM 9/25/2023
+
+Drafting VarPicker now. Backing up cuz 1) a lot of new papers 2) preparing to rape code: change mechanism how changed code lines are handled (they're gonna be remade to changed roles)
+11:14 PM 9/23/2023
+
+#PyCharmBugC0000005 disappeared after splitting __place_roleif to __place_act
+12:45 PM 9/3/2023
+
+
+ADD: dfs_nid NIDDfsOrderChecker test_nid_dfs_order_checker
+ADD: crpo['fixup_tls_pointer'] - maybe it's just a workaround for some bug hidden in basereloc processing code in ldr.cpp
+ADD: create_binhide_bat_file.py --portable mode
+  ADD: sys_opts.UNISCHEMA
+<<<fgnew is current workaround! now need to try to remove magic number sigs from rolegen_old and see if it removes Gen:Variant.Razy.545830>>>
+  YES IT DID. Now need to remove Mint.Zard37.
+    need to develop FuncGenNew.__make_trash_stmts
+FIX RoleGenOld cleared
+  Some fire magic numbers in RoleGenOld replaced with randint(s)
+  Order changed: _xarg now goes first, then three trash args
+ADD: spraygen.py dizzy_vars - local vars with initialized values; they're now useless, but looks sexy; need to use them in dataflow stmts
+1:34 AM 8/24/2023
+
+
+ADD: distribute_randomly
+ADD: multishoulder_tree_gen
+some #NotAddedToUt, #NotAddedToTests are now added. Decided to go with #NotAddedToTests tag.
+7:39 PM 8/22/2023
+
+
+CLISeed --seed_string fixed to use base64 (was raw)
+BACKING UP CUZ "py -m c2.sprayer.fg.test_funcgen_waround" WORKS; it's now primitive
+5:23 PM 8/20/2023
+
+
+ADD TESTS test_arg_processor, test_validate_option_string, test_argparse_prediction
+NEW TESTS   test_handler_table(argv)   test_rules()   test_text_handlers(argv)   #test_stage_runner()   #test_stage_runner_executor() 
+PREPARING TO FINISH AND INTEGRATE StageRunnerExecutor
+THEN ProtoGraph (OR LATER)
+AND FINALLY SEE FG HOW TO "WORKAROUND"
+1:29 AM 8/18/2023
+
+
+cppbuild get back to symlink
+8:05 PM 8/15/2023
+
+ldr.cpp: tls code fixed [bug found when first debugging on vmware], added relocation of AddressOfCallbacks
+2:55 PM 8/15/2023
+
+Need to fix addresource.py absolute path -> relative ..\payload.bmp , then it builds on vmware. test on vmware.
+1:41 PM 8/15/2023
+CMakeLists.txt MFC thing commented out
+1:35 PM 8/15/2023
+
+
+ADD: scripts/ida_simplegraph.py now prints ecalls on G.nodes labels
+12:41 AM 8/5/2023
+
+
+Added CPPBUILD concept to make_startup_bats.py and corresponding code to make it work.
+Now need to introduce tool_facades concept. Probably to future.
+8:37 PM 8/2/2023
+
+
+That's it. Done with gather write-down. See GATHER.txt
+9:58 PM 8/1/2023
+
+
+Drafting metasol, wd, etc.
+............................
+3:21 PM 7/29/2023
+
+
+!) wd/init.py -> scripts/init_work_dir.py
+!) fix: collect_popular_imports.py was capturing wrong Exception
+
+!) Exprgen mind fucking
+!) FG progressing ...
+!) test_
+
+
+Beginning to develop FG...
+5:34 PM 6/4/2023
+
+
+!) rework: old_sprayer -> new_sprayer [!] [!] [!]: test_spraygen_rgold works
+1:23 PM 6/3/2023
+
+
+!) parallel build [!] [!]
+!) add: script/make_startup_bats.py and proper outside-of-project things
+!) add: conemu_split.py, csh.py(bad idea), reexec_vscmd.bat(bad idea)
+!) add: new_sprayer/ - preparation
+4:36 PM 6/2/2023
+
+
+!) fixed: rawlines -> rawlines+libs, specific_lines is for rg
+!) all cpp build paths changed to cppbuild/
+!) rework: spraytab -> SpraytabCLI, rewritten to use PreprocessorCmdSystem
+!) improv: scripts/conemu.bat (added scripts/__conemu.bat)
+!) improv: alloc_valloc, alloc_halloc - more randomization (shifting) image base inside allocation
+!) JenLoopRunner -> TestloopRunner
+!) shifted right image ptr in alloc_valloc to PAGE_SIZE*_fk(...)
+11:38 PM 5/29/2023
+
+
+!) fixes
+!) parallel tests (--tst_worker 2/3)
+!) replaced: win_ipc_lock.py with PathWaitableLock (common/path_waitable_lock.py)
+!) rgold_opts['force_line_scatter'] turned FALSE in $RGOldTest
+Finally backing up, a LOT of changes
+11:49 PM 5/26/2023
+
+
+!) task done: P2 removal. New tests: ldrtest, evptest, parttest [!] [!] [!] [!] [!] [!] [!] [!] [!] [!]
+Now continue FG (check todo file)
+7:39 PM 5/24/2023
+
+
+!) split: paytest to CaseTest, CaseGenerator, PaytestCaseGenerator, etc.
+!) rework: parttest
+!) add: evptest [!]
+!) add: ldrtest
+!) add: --log_stdout
+!) add: ProtLogicTester
+1:57 AM 5/22/2023
+
+
+!) add: _st_check_input_file (disallow TLS, 'cpu'/FileHeader.Machine mismatch)
+!) progress: trasher: big db for real use
+12:07 PM 5/10/2023
+Backing up cuz gonna integrate P1 replace P2
+
+
+!) progress
+touchprjs is gonna be remade to multiple touchprjs storage
+We just need to make a technique of expcollector
+4:18 PM 5/9/2023
+
+
+!) add: wd/ and a lot of stuff [!] [!] [!]
+!) WORK updated
+11:45 PM 5/8/2023
+Backing up [temporary] cuz a lot of changes
+
+
+!) rework: reskit
+!) removed: Cryptor._open_log, _close_log; log is now external variable log_stream:typing.IO
+now need rework: trasher
+4:16 PM 5/8/2023
+
+
+!) rework: all tmps/ to work dir /tmp
+!) add: trasher/test_trash_add_main.py
+A LOT of changes
+
+
+!) add: trasher/ [!]
+!) add: TouchGen, etc.
+Backing up cuz a lot of changes
+9:01 PM 5/4/2023
+
+
+!) add: tools/errsuppress
+!) rework: CRP_WORK_DIR [!] [!]
+!) add: sprayer/ctools/preprocessor.py
+Lot of changes
+9:48 PM 5/3/2023
+
+
+Backing up cuz a lot of [paper, ] progress
+11:11 AM 5/2/2023
+
+
+!) progress: p2removal, refactor: setup_valloc, setup_dllhollow, some deprecated vars to Z(), etc.
+!) fuck p2, let's use p1 only
+Backing up cuz gonna make huge changes - cpp_parts/_program.cpp integrate p1 ldr
+8:59 AM 5/1/2023
+
+
+!) parttest added to all.py
+!) add: spraytab.py --allow_nonexisting
+!) add: setup_dllhollow.cpp to parttest [!]
+!) add: PARTTEST: test/parttest.py [!]
+!) add: resgen (icons, bitmaps, ...) and addresource, --seed_* for both
+!) add: store_method=resource support
+Backing up cuz a lot of changes
+11:41 PM 4/29/2023
+
+
+!) progress: pg
+!) add: sprayer/struct_reorderer.py class StructReorderer
+!) add: common/mirror_directory.py def mirror_directory()
+Backing up cuz wanna to switch task to P2 REMOVAL
+1:25 AM 4/29/2023
+
+
+[[[ Build 300 ]]] [!] [!] [!] [!]
+!) fixed: cleanup.py
+!) works: RoleGenOld=> [ tests added ]
+!) works: cls && py -m c2.test.paytest --crpo_spg_rg old
+!) works: cls && py -m c2.sprayer.test.test_spraygen  --opts_rg $jcs old
+Now develop PG...
+6:21 AM 4/25/2023
+
+
+!) fix: RoleGenOld test works -- test_spraygen --opts_rg old --aux_show_graph true --seed_string 12345
+2:05 AM 4/25/2023
+
+
+!) add: GraphFactory
+6:10 AM 4/24/2023
+
+
+!) add: IterationGeneratorDiagonal
+!) rgdumb_opts['dumb_funcs'] now works
+!) remove: rgdumb_opts['rename_procs']
+!) fixed: bug in RoleGenOld, now its self test works
+Backing up cuz a lot of things done
+3:03 AM 4/24/2023
+
+
+!) achivement: pg/pm.py is suddenly executing, generating prog that calls 3 userprocs and exit
+!) add: rgdumb_opts['rename_procs'] < probably obsolete, remove
+!) add: cleanup.py
+!) remove: _SpraytestProjectInvoker, now functionality is in SpraytestProject, e.g. single place
+Working on PM - nightmare of P7 nonexistence 11:21 PM 4/22/2023
+Backing up cuz of achievement
+6:01 AM 4/23/2023
+
+
+!) progress: pm
+Backing up cuz wanna switch to antiemu research task
+5:55 AM 4/19/2023
+
+
+!) progress: RoleGenOld
+Backing up cuz wanna switch to pg dev
+12:23 AM 4/19/2023
+
+
+!) add: ZZ()
+!) remake: PART OF cpp_parts -> ZVARS, STK, the rest is later, when developing multiple UserProcs in pg
+!) all.bat -> all.py
+11:36 PM 4/16/2023
+
+
+!) add: billet - threads. now need events, and other
+Backing up cuz afraid of spoiling billet
+5:02 AM 4/16/2023
+
+
+!) add: update_and_run_spraytest_project
+9:14 PM 4/15/2023
+
+
+!) test_pg.py is now prepared for pg dev
+!) pg/pg.py -> pg/sync_matrix_tester.py
+Backing up before continuing developing pg prototype output
+2:18 AM 4/15/2023
+
+
+!) @@@structfields @@@endstructfields spraytab['structs'] spraytab['struct_fields'] spraytab['struct_opts']
+4:41 AM 4/14/2023
+
+
+!) add: @@@zvars
+!) rename: StageRunner2 to StageRunner
+8:54 PM 4/13/2023
+
+
+!) all_ut.bat -> all_ut.py
+!) all_ct.bat -> all_ct.py
+!) _xarg in stk.h development
+!) testprog_stk_g.cpp - not completed
+!) testprog_stk.cpp
+Backing up cuz a lot of things done
+7:56 PM 4/13/2023
+
+
+!) stub_tools/binhex_facade.py
+!) CMakeLists.txt GLOB_RECURSE -> GLOB, dllmain.cpp now nighbor of include_payload.binhex.h.cpp/h
+!) mklink /j include_spraygen
+!) rename: @@@vars to @@@staticvars everywhere
+!) some folder struct fixes
+!) cleanup_temp.bat
+Backing up cuz a lot of things done, now need to continue writing tests for CreateThread
+5:00 AM 4/13/2023
+
+
+!) add: paytest [!] [!] [!] [!]
+!) all.bat now calls: [ut, ct, paytest]; it I want without paytest, just use cls && all_ut && all_ct
+Backing up cuz paytest added. Now need to develop proggen!
+11:49 PM 4/11/2023
+
+
+
+!) need to require all opts in all schemas because it's the difference in behaviour between cli and class backends
+   add: Unischena._validate_all_presence_by_schema
+   unischema now disallow half-formed opts (e.g. without all the opts that are on schema)
+!) more paytest tests, still not completed
+Backing up cuz Unischema was changed
+4:56 AM 4/10/2023
+
+
+!) paytest.py works, but CaseGenerator not complete
+Backing up before continue dev paytest
+10:01 PM 4/9/2023
+
+
+!) simple_seed_test works
+!) fix: Cryptor.execute() - pipe to cryptor.log - Popen(args=cmd, stdout=PIPE, shell=True)
+!) ct_cryptor test is brought back to all_ct.bat
+!) change: Cryptor is now StageRunner2
+Backing up cuz all works even without nobleedingedge!
+6:50 AM 4/9/2023
+
+
+!) add: simple_seed_test - it fails, cuz need seed mechanisms everywhere
+!) add: Unischema make_def_inst, some refactoring
+Backing up cuz gonna make Cryptor be StageRunner2
+
+
+!) add: cli_conf_to_argv.py
+!) add: cryptor_cli.py < no test yet. it's now used from BackendCLI which is used by paytest which I really want
+!) add: CLISeed, SeedDB
+!) add: test_backend.py
+!) add: Cryptor._validate_opts; TODO: everywhere, #ToolsShouldValidateTheirOpts
+Backing up cuz emergency
+6:28 PM 4/7/2023
+
+
+!) change: Spraygen is now StageRunner2
+!) split: Spraygen.execute() -> ... stage funcs
+!) split: SpraygenCLI -> SprayGen, SpraygenCLI
+!) test_spraygen is now ct, not ut
+!) stage_runner2.py -> common/
+11:57 PM 4/5/2023
+
+
+!) rg, fg, everything refactored to use NEW CLASS StageRunner2 which doesn't have |num_stages|
+!) add: unischema.py <your.UNISCHEMA> <root_path>  - functionality to print unischema/definstance/etc
+Backing up cuz continuing with PG PLAN
+
+!) test_pg_preset - semaphores, mutexes - work, events - no, - a good place to start from
+4:47 AM 4/5/2023
+
+
+!) all.bat -> all_ut.bat, all_ct.bat
+2:47 AM 4/4/2023
+
+
+!) add: --opts_rgpxlx_inline to spraygen
+Thinking about test reorganize
+1:02 AM 4/4/2023
+
+!) add: test_pg_reset.py
+!) test_cryptor now works
+!) add: common/sx.py
+9:39 PM 4/3/2023
+
+!) test_spraygen works: cls && py -m c2.sprayer.test_spraygen
+10:22 PM 4/2/2023
+
+!) ADD sprayer/test_kit/spraytest_project.py
+!) test_spraygen added to unittests, use --bla nobleedingedge! to ignore it
+!) . - = [[ [[ [[ [[ --bla nobleedingedge!  <<< pass to ANY test ]] ]] ]] ]] = - .
+!) +test_cli_config_aggregator_with_jen.py
+backing up cuz.. IDK
+5:53 PM 4/2/2023
+
+!) CLIConfig: booleans are now true/false, not presence
+!)Moved cli,jen,etc -> \cl\
+!)Added CLIConfigAggregator
+6:50 AM 4/1/2023
+
+Backup cuz Applying CLIConfigManager concepts...
+4:17 AM 4/1/2023
+
+
+!) Cryptor2->Cryptor; ADD __enter__ __exit__; Backend the same
+
+
+
+Backing up cuz it could be a mistake to implement #ProjectMerge...
+!) crp. -> c2., now need PYTHONPATH=Z:\d and from c2.xxx import xxx
+!) #ProjectMerge moved ./src/crp ->  .
+1:33 AM 3/30/2023
+
+
+!) cls && build.py && all_tests.py; complex_tests.py TODO (it will contain paytest and engtest)
+!) NOW ALL THROUGH TESTS -- all_tests.bat
+!) build.py (FUCK build.bat)
+!) src\crp\paytest.concept.nfo
+  Now need to develop paytest.py <<< first need to fill casegen yield stuff properly <<<<<<
+!) after this backup, I'm gonna #ProjectMerge remake the structure of c2\, move src/crp/* -> c2/., etc. 
+12:28 AM 3/30/2023
+
+
+
+add common/win_lock_file.py
+make_cli_schema -> make_jen_schema_for_cli & make_cli_schema, added_test_unischema_normal_schema
+
+
+test_proggen now uses Unischema
+12:44 AM 3/17/2023
+
+
+added class Unischema
+2:52 AM 3/16/2023
+
+
+Added unittests.bat
+
+3:40 AM 3/14/2023
+
+
+

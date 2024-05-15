@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "do_optimize": {"type": "boolean", "default": true, "$jRGOldTest": ["$jcb", "true", "false"]},
+    "graph": {"type": "string", "default": "barabasi://default?n_sx=200..500&m_sx=2",
+                                "$jRGOldTest": ["$jcs", "testgstock://i38_r5_sl5.dot",
+                                                        "barabasi://default?n_sx=200..500&m_sx=2"]},
+    "force_lines_scatter": {"type": "boolean", "default": false, "$jRGOldTest": ["$jcb", "false"], "$jinfo": "DISABLED in tests cuz takes too much nodes, 1 line=1 node" }
+  },
+  "additionalProperties": false
+}

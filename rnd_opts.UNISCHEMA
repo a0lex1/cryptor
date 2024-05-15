@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "seeds": {
+      "type": "object",
+      "properties": {
+        "bh": { "type": "string", "default": "", "$jhint": "binhide" },
+        "cb": { "type": "string", "default": "", "$jhint": "cryptbin" },
+        "mdf": { "type": "string", "default": "", "$jhint": "mod_def_file.py" },
+        "sg": { "type": "string", "default": "", "$jhint": "spraygen" },
+        "gds": { "type": "string", "default": "", "$jhint": "gen_decay_src.py" },
+        "ar": { "type": "string", "default": "", "$jhint": "addresource.py" },
+        "rsg": { "type": "string", "default": "", "$jhint": "resgen.py" },
+        "trs": { "type": "string", "default": "", "$jhint": "trash_add.py" },
+        "grb": { "type": "string", "default": "", "$jhint": "gen_rand_buf.py" },
+        "cpd": { "type": "string", "default": "", "$jhint": "create_payload_default.py" },
+        "evp": { "type": "string", "default": "", "$jhint": "evpgen.py" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

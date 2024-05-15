@@ -1,0 +1,319 @@
+[ ] add crc/hash to dirname to solve same-name-file problem
+[+] random db pick - resgen.py, --dbs is for whitelist
+[+] risoheditor freeze - exechlp project added (/t means kill after msec)
+
+
+
+
+
+
+
+
+
+
+#index_image_db.py -d ./wp/ -f
+
+parser.add_argument('-d', '--dir', required=True)
+parser.add_argument('-c', '--compare_dates', action='store_true', default=True, help='otherwise, reindex all')
+#parser.add_argument('-t', '--types', )
+
+#medstegc.exe store carrier.png evil.bin stored.bin --rect --lbits [--ofmt --ifmt]
+#medstegc.exe store ./wp/ evil.bin stored.bin --rect --lbits [--ofmt --ifmt]
+
+#medstegc.exe unstore stored.bin unstored_evil.bin --lbits --osize [--ofmt --ifmt]
+
+
+NEW:
+
+
+medstegc.exe tore <carrier|dir> <in> <out> <--rect> <--lbits>
+medstegc.exe unstore <carrier> <in> <out> <--rect> <--lbits>
+
+medstegindex.exe <dir> <--dates_only> [--types]
+
+
+class Engine {
+  virtual Initialize() = 0
+}
+
+class Transformation {
+public:
+};
+
+class Media {
+public:
+  //virtual Uptr<Media> Clone() = 0
+  //virtual ApplyTransformation(Shptr<Transformation> transf) = 0
+  virtual Uptr<Media> CloneTransformed(Shptr<Transformation> transf) = 0
+  
+  virtual void* LockData(UINT& len) = 0
+  virtual UnlockData() = 0
+  
+  //virtual GetDataSize() const = 0
+  //virtual GetData() const = 0
+  //virtual SetData(const void*) = 0
+};
+
+class MediaReader {
+public:
+  void SetDestMedia(Shptr<Media>) { media_ = media}
+
+  virtual ReadFromString(istream&) = 0
+}
+
+class MediaWriter {
+public:
+  SetSourceMedia(Shptr<Media>) { media_ = media}
+
+  virtual WriteToStream(ostream&) = 0
+}
+
+class ObjectFactory {
+public:
+  virtual Uptr<Engine> CreateEngine() = 0
+  virtual Uptr<Transformation> CreateTransformation() = 0
+  virtual Uptr<Media> CreateMedia() = 0
+  virtual Uptr<MediaReader> CreateMediaReader() = 0
+  virtual Uptr<MediaWriter> CreateMediaWriter() = 0
+};
+
+
+-------------
+
+enum class ImgFormat { };
+
+
+class ImgEngine : public Engine {
+  Initialize() override 
+}
+
+class ImgTransformation : public Transformation {
+  virtual CropRect() = 0
+}
+
+class ImgCharacteristics {
+public:
+  UINT bpp:
+  UINT width;
+  UINT height;
+};
+
+class Img : public Media {
+public:
+  virtual Shptr<ImgCharacteristics> GetImageCharacteristics() = 0;
+};
+
+class ImgReader : public MediaReader {
+public:
+  void SetFormat(ImgFormat fmt) { fmt_ = fmt }
+  
+}
+
+class ImgWriter : public MediaWriter {
+public:
+  void SetFormat(ImgFormat fmt) { fmt_ = fmt; }
+
+}
+
+------------------
+
+enum class SoundFormat { };
+
+class SoundEngine: public Engine {
+}
+class SoundTransformation: public Transformation {
+};
+class Sound: public Media {
+};
+class SoundReader : public MediaRead {
+};
+class SoundWriter: public MediaWriter {
+};
+
+
+// ------------------------
+
+
+class ImgEngineWic {
+public:
+
+private:
+  friend class ImgReaderWic;
+  friend class ImgWriterWic;
+  CComQIPtr<IWICFactory> wicfac;
+}
+
+
+
+class ImgReaderWic: public ImgReader {
+}
+
+class ImgWriterWic: public ImgWriter {
+}
+
+// ----------
+
+// Top level class
+class MedstegTool {
+public:
+  Tool(Shptr<ObjectFactory> objfac);
+
+  void Init() {
+    engine_ = objfac_->CreateEngine();
+    engine_->Initialize();
+  }
+  void LoadCarrier(const string& path) {
+    carrier_media_ = objfac_->CreateMedia(engine_);
+    rdr_ = objfac_->CreateMediaReader();
+    rdr_->SetDestMedia(carrier_media_);
+    rdr_->LoadFromFile(path);
+  }
+  void LoadCarrier(const istream& stm) {
+    carrier_media_ = objfac_->CreateMedia(engine_);
+    rdr_ = objfac_->CreateMediaReader();
+    rdr_->SetDestMedia(carrier_media_);
+    rdr_->LoadFromMem(path);
+  }
+  void TempMediaFromCarrier(Shptr<Transformation> transf) {
+    temp_media_ = carrier_media_->Clone();
+    temp_media_->ApplyTransformation(transf);no no no  
+    temp_
+  }
+  void ObtainTempMediaBuffer() {
+    temp_media_->CopyData(buffer);
+  }
+  void SaveBufferAsMedia() {
+    writ_ = objfac_->CreateMediaWriter();
+    writ_->SetSourceMedia(temp_);???????????????????????//
+  }
+  
+  void SteganographyStore(unsigned char Lbits, istream& binary_stream) {
+    for () {
+      buffer[i] &= ;
+    }
+  }
+  void SteganographyUnstore(unsigned char Lbits, istream& binary_stream) {
+  }
+
+  // temp image pixels for store, stego-unstored buffer for unstore
+  vector<char> buffer;
+
+private:
+  Shptr<ObjectFactory> objfac_;
+  Shptr<Engine> engine_;
+  Shptr<MediaReader> rdr_;
+  Shptr<Media> temp_media_;
+  Shptr<MediaWriter> writ_;
+}
+
+
+//   load from file, save to mem, unstore from mem, check with source file
+class Tester {
+public:
+  Tester(ObjectFactory&);
+};
+
+
+
+
+
+
+
+void test_medsteg_tool() {
+  {
+    ImgFactoryWic fac;  
+    tool = MedstegTool(fac);
+    tool.Init();
+    
+    tool.LoadCarrierImage("test.png");
+    tool.TempImageFromCarrierImage({10, 20, 30, 40});
+    tool.ObtainTempImagePixels();
+    tool.SteganographyStore();
+    ofstream("stored.png", ios_base::bin).write(&buffer[0], buffer.size());
+  }
+  {
+    ImgFactoryWic fac;  
+    tool = MedstegTool(fac);
+    tool.Init();
+    
+    tool.LoadCarrierImage("");
+    
+  }
+  
+}
+
+----------------
+
+// TODO: abstract rows so I can sort sounds too
+class Indexer {
+public:
+  Indexer(ImgFactory& imgfac)
+  
+  void GetChangedList();
+  void GetFullList();
+  
+  void ReindexList();
+
+
+  list<> the_list;
+
+private:
+  ImgFactory& imgfac_
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+NO BETTER WRITE IT ALL C+++++++++++++ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#medsteg.py 
+g = parser.add_mutual_excl_g(Required=True)
+g.add_argument('-i', '--carrier_file', )
+g.add_argument('-d', '--carrier_dir', )
+parser.add_argument('-p', '--payload_file', )
+parser.add_argument('-o', '--out_file', )
+parser.add_argument('-s', '--dbdir', required=True)
+parser.add_argument('-l', '--lbits', required=True)
+parser.add_argument('', '', )
+
+payload_data = open(args.input_file).read() # TOCTOU bug!
+payload_len = len(payload_data) # not aligned if used as square!
+
+cpath, cbpp, csquare, cwidth, cheight = \
+  pick_random_image(args.dbdir, min_square=payload_len)
+
+payload_rect = pick_random_rect(cwidth, cheight, payload_square)
+
+os.system(f'medsteg.exe store {cpath} {args.input_file} {args.out_file} --rect {rc} --lbits ') # TOCTOU !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

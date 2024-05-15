@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "graph": {"type": "string", "default": "barabasi://default?n_sx=200..500&m_sx=2" },
+    "route_limit": {"type": "number", "default": 8, "$jdefault": ["$jcn", "7", "8", "9"] },
+    "route_bits": {"type": "number", "default": 404, "$jdefault": ["$jcn", "404"] },
+    "root_order": {"type": "string", "default": "badsex", "$jdefault": ["$jcs", "badsex"] },
+    "proc_order": {"type": "string", "default": "badshit", "$jdefault": ["$jcs", "badshit"] }
+  },
+  "additionalProperties": false
+}

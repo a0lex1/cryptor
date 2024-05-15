@@ -1,0 +1,43 @@
+Current State: follow alrogithm mentioned below; if some minor error, fix it; future:
+GATHER.txt
+
+
+--------------------------------------------------------------------------
+Maybe, it'll be cool to used Scenario() to build BAT that builds workdir.
+The mechanisms seem related. And this would utilize the ability of making
+different BATs for other people so they can collect their own DBs.
+--------------------------------------------------------------------------
+
+Some scripts are stubs.
+Supposed to be used this way:
+
+0) [ONLY IF TESTING, for not overriding current useful contents]:
+   set CRP_WORK_DIR=another directory
+
+0a)mkdir %CRP_WORK_DIR%\popular_imports
+
+1) cls && py -m c2.wd.collect_popular_imports [--bla bla:lightcollection!]
+... OK
+
+2) cls && py -m c2.wd.touchprj_from_popular_imports
+...
+src\mod_NTDLL.DLL.cpp(22): error C2065: 'RtlIpv6StringToAddressW': undeclared identifier
+src\mod_NTDLL.DLL.cpp(23): error C2065: 'RtlIpv4StringToAddressW': undeclared identifier
+mod_OLEAUT32.DLL.cpp
+mod_USER32.DLL.cpp
+mod_WBEMCOMN.DLL.cpp
+src\mod_WBEMCOMN.DLL.cpp(11): error C2065: 'GetMemLogObject': undeclared identifier
+src\mod_WBEMCOMN.DLL.cpp(12): error C2065: '_ThrowMemoryException_': undeclared identifier
+src\mod_WBEMCOMN.DLL.cpp(13): error C2065: 'BreakOnDbgAndRenterLoop': undeclared identifier
+...
+c2.sprayer.test.spraytest_project.SpraytestCompileError: *** cl.exe returned non-null - 2 ***
+
+3) Fix errors manually in VS, build project.
+
+
+Now touchprj ready for picking. Test picking:
+
+py -m c2.trasher.touchgen -m 9999999 -f 999999999
+
+
+

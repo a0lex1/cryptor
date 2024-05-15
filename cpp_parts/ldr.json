@@ -1,0 +1,6 @@
+{
+  "weak_defs": {
+    "NEEDAPI_LoadLibraryExA": null,
+    "NEEDAPI_VirtualProtect": null
+  }
+}

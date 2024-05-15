@@ -1,0 +1,14 @@
+TODO: put weaknesses from that info file
+Weaknesses =>
+
+api
+  alloc_* - add crp_opts['allow_nongranularity'] that makes imagebase 4096-aligned, not 0xffff
+
+code
+  number of vcalls, need to add fake vcalls
+  #weakness1 (sprayer.stk)
+
+exports
+  one export, need random number of exports
+  export name is too random (need more human string)
+  

@@ -1,0 +1,9 @@
+{
+  "a": 1,
+  "b": {
+    "c": { "$include": "/test/td/includee1.json" },
+    "d": {
+      "e": 5
+    }
+  }
+}

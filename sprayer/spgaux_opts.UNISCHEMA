@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "save_graph": {"type": "boolean", "default": false},
+    "show_graph": {"type": "boolean", "default": false},
+    "show_rg_stages": {"type": "boolean", "default": false},
+    "save_paths": {"type": "boolean", "default": false},
+    "verbose": {"type": "boolean", "default": false},
+    "fg_threads": {"type": "number", "default": 24}
+  },
+  "additionalProperties": false
+}

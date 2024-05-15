@@ -1,0 +1,7 @@
+{
+  "class_to_test": ["$jcs", "dfs", "random"],
+  "calldb": ["$jcs", "./test.calldb", "./real1.calldb"],
+  "shuffle_db": ["$jcb", "false", "true"],
+  "callgroup_whitelist": null,
+  "print_db": true
+}

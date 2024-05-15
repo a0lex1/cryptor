@@ -1,0 +1,1 @@
+"%~dp0\..\common\dir_from_template.py" "%~dp0\..\stv19\%1" "%~dp0\..\stv19\%2" "%1=%2"

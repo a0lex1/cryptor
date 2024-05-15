@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "num_threads_sx": { "type": "string", "default": "0..20", "$jPGTest": ["$jcs", "1", "10"] },
+    "percent_thread_sharedfn_sx": { "type": "string", "default": "0..25", "$jPGTest": ["$jcs", "0", "80" ]},
+    "percent_residents_sx": { "type": "string", "default": "70..100", "$jPGTest": ["$jcs", "0", "50", "100"]},
+    "timeofs_waker_poll_start_sx": { "type": "string", "default": "70..100", "$jPGTest": ["$jcs", "0", "333", "777"]},
+    "timeofs_last_thread_sx": { "type": "string", "default": "3000..30000", "$jPGTest": ["$jcs", "0", "333", "2000"]},
+    "timeofs_last_userproc_sx": { "type": "string", "default": "3000..40000", "$jPGTest": ["$jcs", "0", "1", "10", "1000"]}
+  },
+  "additionalProperties": false
+}

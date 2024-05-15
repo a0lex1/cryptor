@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "x": {"type": "string", "default": "sisi" },
+    "y": {"$j": {"$jif": ["x", "hello"]}, "$include": "/3.UNISCHEMA"  },
+    "z": {"$j": {"$jif": ["x", "sisi"]}, "type": "string", "default": "zzz"  }
+  }
+}

@@ -1,0 +1,27 @@
+Originally the problem was that I tried to invent a mechanism for making several jen fields increase together
+to skip some unnecesarry jen cases:
+  "stmtgens":         { "type": "string", "default": "none", "$jFGFullTest": ["$jcs", "none", "some", "all"] },
+    "some_stmtgens": {
+      "$j": { "$jif": ["stmtgens", "some"] },
+      "type": "object",
+      "properties": {
+        "df":     { "type": "boolean", "default": true },
+        "subs":   { "type": "boolean", "default": true },
+        "trash":  { "type": "boolean", "default": true },
+        "dfopts":    { "$j": {"$jif": ["df", "true"]}, "$include": "/sprayer/df_opts.UNISCHEMA"  },
+        "subsopts":  { "$j": {"$jif": ["subser", "true"]}, "$include": "/sprayer/subs_opts.UNISCHEMA" },
+        "trashopts": { "$j": {"$jif": ["trash", "true"]}, "$include": "/sprayer/trashstmt_opts.UNISCHEMA" }
+      }
+    }
+This doesn't work because in <all> mode there is no xxxopts: fields (configs), they are only for <some>.
+Therefore, this problem should be solver another way: need to diagonal-merge some jen fields so
+they increase simulateneously, without combinig all possible values.
+E.g., for the case where i and j are bound:
+i j
+1 1
+2 2
+3 3
+This would require adding --jen_XXX mode (XXX->merge/bind/combine/etc) for some fields:
+--jen_XXX r1.field1 root2.field2
+3:50 PM 6/5/2023
+

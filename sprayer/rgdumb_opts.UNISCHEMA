@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "dumb_funcs": {"type": "number", "default": 0, "$jdefault": 3 }
+  },
+  "additionalProperties": false
+}

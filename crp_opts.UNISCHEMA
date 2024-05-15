@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "no_check_bin": {"type": "boolean", "default": false},
+    "rearrange": {"type": "boolean", "default": true},
+    "soi_mul_percent_sx": {"type": "string", "default": "100..125"},
+    "no_spread_section_load": {"type": "boolean", "default": false},
+    "fixup_tls_pointer": {"type": "boolean", "default": false},
+
+    "evp": {"$include": "/evp/evp_opts.UNISCHEMA"},
+
+    "ae_method": {"type": "string", "default": "xxx", "$jPartTest": ["$jcs", "xxx"]},
+    "store_method": {"type": "string", "default": "binhex", "$jPartTest": ["$jcs", "binhex", "resource"]},
+    "alloc_method": {"type": "string", "default": "valloc", "$jPartTest": ["$jcs", "valloc", "halloc"], "$jEVPTest": ["$jcs", "valloc", "halloc"]},
+    "spg": {"$include": "/sprayer/spraygen_opts.UNISCHEMA" },
+    "program": {"type": "string", "default": "static_min", "$jhint": ["static_min", "static_adv", "proggen"] },
+    "pg": {"$j": {"$jif": ["program", "proggen"]}, "$include": "/pg/pgopts.UNISCHEMA" },
+    "trasher_enabled": {"type": "boolean", "default": true },
+    "trasher": {"$j": {"$jif": ["trasher_enabled", true]}, "$include": "/trasher/trasher_opts.UNISCHEMA"},
+    "num_cpp_decays_sx": {"type": "string", "default": "10..50" },
+    "num_c_decays_sx": {"type": "string", "default": "10..50" },
+    "allow_tls": {"type": "boolean", "default": false }
+  },
+  "additionalProperties": false
+}

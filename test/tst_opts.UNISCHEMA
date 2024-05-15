@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "dry": {"type": "boolean", "default": false},
+    "limit": {"type": "number", "default": -1},
+    "worker": {"type": "string", "default": "", "$jhint": "2/3"}
+  },
+  "additionalProperties": false
+}
